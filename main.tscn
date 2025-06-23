@@ -1,0 +1,238 @@
+[gd_scene load_steps=15 format=3 uid="uid://bc8gml855t7vj"]
+
+[ext_resource type="Script" uid="uid://dwx0hvnoo1hob" path="res://scenes/main.gd" id="1_0wfyh"]
+[ext_resource type="Texture2D" uid="uid://6u88ijameqjd" path="res://assets/Tilesheet/baseball_field_1280x720.png" id="2_sugp2"]
+[ext_resource type="Texture2D" uid="uid://c5boo3oc3sg8i" path="res://assets/PNG/White/characterWhite (1).png" id="3_jyhfs"]
+[ext_resource type="Texture2D" uid="uid://tkfnvhu6aj12" path="res://assets/Tilesheet/pitchers_mound_sprite.png" id="4_jyhfs"]
+[ext_resource type="Texture2D" uid="uid://bwl4wisci5qm4" path="res://assets/Tilesheet/fence.jpg" id="5_tbgi4"]
+[ext_resource type="FontFile" uid="uid://dlvsns82hq880" path="res://fonts/arcadeclassic/ARCADECLASSIC.TTF" id="6_tefeu"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jyhfs"]
+font = ExtResource("6_tefeu")
+font_size = 22
+
+[sub_resource type="LabelSettings" id="LabelSettings_tipki"]
+font = ExtResource("6_tefeu")
+font_size = 25
+
+[sub_resource type="LabelSettings" id="LabelSettings_85g3d"]
+font = ExtResource("6_tefeu")
+font_size = 17
+
+[sub_resource type="LabelSettings" id="LabelSettings_choun"]
+font = ExtResource("6_tefeu")
+font_size = 18
+
+[sub_resource type="LabelSettings" id="LabelSettings_tbgi4"]
+font = ExtResource("6_tefeu")
+font_size = 40
+
+[sub_resource type="LabelSettings" id="LabelSettings_tefeu"]
+font = ExtResource("6_tefeu")
+font_size = 29
+
+[sub_resource type="LabelSettings" id="LabelSettings_o6xl0"]
+font = ExtResource("6_tefeu")
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_ya4ey"]
+font = ExtResource("6_tefeu")
+font_size = 17
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_0wfyh")
+
+[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(639.57, 359.68)
+scale = Vector2(0.999109, 0.998111)
+texture = ExtResource("2_sugp2")
+
+[node name="Batter" type="Sprite2D" parent="."]
+position = Vector2(605, 530)
+scale = Vector2(1.03571, 0.911292)
+texture = ExtResource("3_jyhfs")
+
+[node name="PitcherMound" type="Sprite2D" parent="."]
+position = Vector2(641, 350)
+scale = Vector2(1.96667, 1.95)
+texture = ExtResource("4_jyhfs")
+
+[node name="HomerunFence" type="Sprite2D" parent="."]
+position = Vector2(640, 23.75)
+scale = Vector2(1, 0.93)
+texture = ExtResource("5_tbgi4")
+
+[node name="UILayer" type="CanvasLayer" parent="."]
+
+[node name="HUD" type="Control" parent="UILayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="RoundLabel" type="Label" parent="UILayer/HUD"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 3.725
+anchor_top = 10.3
+anchor_right = 6.8
+anchor_bottom = 10.7
+offset_right = 40.0
+offset_bottom = 23.0
+text = " Round: 1/5"
+label_settings = SubResource("LabelSettings_jyhfs")
+metadata/_edit_use_anchors_ = true
+
+[node name="TimeLabel" type="Label" parent="UILayer/HUD"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 14.75
+anchor_top = 0.125
+anchor_right = 16.35
+anchor_bottom = 0.4
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Time: 120"
+label_settings = SubResource("LabelSettings_tipki")
+metadata/_edit_use_anchors_ = true
+
+[node name="HomerunLabel" type="Label" parent="UILayer/HUD"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 25.775
+anchor_top = 10.225
+anchor_right = 27.45
+anchor_bottom = 10.25
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Home Runs: 0"
+label_settings = SubResource("LabelSettings_85g3d")
+metadata/_edit_use_anchors_ = true
+
+[node name="TotalLabel" type="Label" parent="UILayer/HUD"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 26.15
+anchor_top = 10.65
+anchor_right = 26.8
+anchor_bottom = 10.7
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Total: 0"
+label_settings = SubResource("LabelSettings_choun")
+metadata/_edit_use_anchors_ = true
+
+[node name="PowerBar" type="ProgressBar" parent="UILayer/HUD"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 9.55
+anchor_top = 17.05
+anchor_right = 22.3
+anchor_bottom = 17.05
+offset_right = 4.0
+offset_bottom = 27.0
+step = 1.0
+metadata/_edit_use_anchors_ = true
+
+[node name="RoundEndPanel" type="Panel" parent="UILayer"]
+offset_top = 2.0
+offset_right = 1282.0
+offset_bottom = 719.0
+
+[node name="RoundEndLabel" type="Label" parent="UILayer/RoundEndPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -25.0
+offset_right = 150.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Round Complete!"
+label_settings = SubResource("LabelSettings_tbgi4")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RoundStats" type="Label" parent="UILayer/RoundEndPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.396955
+anchor_top = 0.685835
+anchor_right = 0.598361
+anchor_bottom = 0.685835
+offset_left = -316.5
+offset_top = -39.0
+offset_right = 316.5
+grow_horizontal = 2
+grow_vertical = 0
+text = "Home Runs This Round: 0 Total Home Runs: 0"
+label_settings = SubResource("LabelSettings_tefeu")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="GameOverPanel" type="Panel" parent="UILayer"]
+offset_top = -3.0
+offset_right = 1284.0
+offset_bottom = 721.0
+
+[node name="FinalScore" type="Label" parent="UILayer/GameOverPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.574734
+anchor_top = 0.364511
+anchor_right = 0.574734
+anchor_bottom = 0.364511
+offset_left = -305.284
+offset_right = 40.0
+offset_bottom = 109.0
+text = "Final Score: 0 Home Runs"
+label_settings = SubResource("LabelSettings_o6xl0")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Performance" type="Label" parent="UILayer/GameOverPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.437695
+anchor_top = 0.487569
+anchor_right = 0.522652
+anchor_bottom = 0.53189
+offset_right = 40.0
+offset_bottom = 23.0
+text = "KEEP PRACTICING!"
+label_settings = SubResource("LabelSettings_ya4ey")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="RestartButton" type="Button" parent="UILayer/GameOverPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.402182
+anchor_top = 0.562327
+anchor_right = 0.470772
+anchor_bottom = 0.626039
+offset_right = 8.0
+offset_bottom = 8.0
+text = "RESTART"
+metadata/_edit_use_anchors_ = true
+
+[node name="QuitButton" type="Button" parent="UILayer/GameOverPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.508567
+anchor_top = 0.560773
+anchor_right = 0.569362
+anchor_bottom = 0.6231
+offset_right = 8.0
+offset_bottom = 8.0
+text = "QUIT"
+metadata/_edit_use_anchors_ = true
