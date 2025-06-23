@@ -1,4 +1,4 @@
-# Derby Kingz ⚾👑  Add commentMore actions
+# Derby Kingz ⚾👑  
 *A 2D Home Run Derby Game Made with Godot and GDScript*
 
 ## 🎮 The Jist
