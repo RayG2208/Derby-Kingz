@@ -29,25 +29,6 @@ This project was built using the **Godot Engine** and coded entirely in **GDScri
 
 ---
 
-## 🚀 Play for yourself!
-
-### 1. Clone the repository
-
-git clone https://github.com/YOUR_USERNAME/derby-kingz.git
-cd derby-kingz
-
-2. Open in Godot
-Launch Godot Engine
-
-Click Import
-
-Select the project.godot file inside the repository folder
-
-3. Run the game
-Press F5 or click Play in the Godot editor
-
----
-
 ## 🎮 Controls
 Action	Key
 Swing Bat	Spacebar
